@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import BasicButtons from "./components/ui/button";
-import FormPropsTextFields from "./components/ui/input";
+import LoadingButton from "./components/ui/LoadingButton";
+import ApiKeyInput from "./components/ui/ApiKeyInput";
 import useChromeStorage from "./hooks/useChromeStorage";
 
 const Popup: React.FC = () => {
@@ -48,6 +48,7 @@ const Popup: React.FC = () => {
     loadChromeStorage();
   }, []);
 
+  //now we write the tsx code for the popup
   return <div>Popup</div>;
 };
 
