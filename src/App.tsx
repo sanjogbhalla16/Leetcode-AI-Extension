@@ -21,7 +21,16 @@ const Popup: React.FC = () => {
       if (apiKey) {
         await setKeyModel(apiKey);
       }
-    } catch (err) {
+      //now we give the message for successful storage of the api key
+      setSendMessage({
+        status: "success",
+        message: "API key stored successfully",
+      });
+    } catch (err: any) {
+      setSendMessage({
+        status: "error",
+        message: err.message,
+      });
     } finally {
       setIsLoading(false);
     }
@@ -32,8 +41,11 @@ const Popup: React.FC = () => {
     const loadChromeStorage = async () => {
       //first we check if chrome is there or not
       if (!chrome) return;
-      const apiKey = await useChromeStorage();
+      const { getKeyModel } = await useChromeStorage();
+      setApiKey(await getKeyModel());
+      setIsLoaded(true);
     };
+    loadChromeStorage();
   }, []);
 
   return <div>Popup</div>;
