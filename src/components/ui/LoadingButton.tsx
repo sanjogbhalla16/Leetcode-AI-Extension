@@ -4,7 +4,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 interface LoadingButtonProps {
   isLoading: boolean;
-  onClick: () => void;
+  onClick: (event?: React.MouseEvent<HTMLButtonElement>) => void;
   children: React.ReactNode;
 }
 //we need to provide the spinner loader here also
@@ -17,7 +17,7 @@ const LoadingButtons: React.FC<LoadingButtonProps> = ({
     <Button
       variant="contained"
       disabled={isLoading}
-      onClick={onClick}
+      onClick={(e) => onClick(e)}
       color="primary"
       fullWidth
     >
