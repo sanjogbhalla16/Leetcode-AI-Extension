@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LoadingButton from "./components/ui/LoadingButton";
 import ApiKeyInput from "./components/ui/ApiKeyInput";
-import leetCode from "@/assets/leetcode.png";
+import leetCode from "./assets/leetcode.png";
 import useChromeStorage from "./hooks/useChromeStorage";
 import Show from "./components/Show";
 
