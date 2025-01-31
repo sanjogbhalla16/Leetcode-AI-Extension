@@ -2,7 +2,8 @@
   "manifest_version": 3,
   "name": "LeetCode AI Extension",
   "description": "Chrome extension providing AI-driven hints on LeetCode problems. Get step-by-step help to boost problem-solving skills effectively.",
-  "version": "1.0",
+  "version": "1.0.0",
+  "permissions": ["storage"],
   "action": {
     "default_popup": "index.html"
   },
@@ -19,6 +20,8 @@
     }
   ],
   "background": {
-    "service_worker": "src/background.ts"
+    "service_worker": "src/background.js",
+    "type": "module",
+    "persistent": false
   }
 }

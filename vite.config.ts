@@ -14,4 +14,16 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"), // Ensure "@" points to "src"
     },
   },
+  server: {
+    port: 5173,
+    cors: {
+      origin: "*", // Allow all origins (only for development)
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization"],
+    },
+    watch: {
+      usePolling: false, // Prevent excessive reloading
+    },
+    hmr: false, // Disable Hot Module Replacement
+  },
 })
