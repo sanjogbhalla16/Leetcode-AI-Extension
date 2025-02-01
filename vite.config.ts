@@ -15,7 +15,13 @@ export default defineConfig({
     },
   },
   server: {
+    host: 'localhost',
     port: 5173,
+    strictPort: true,
+    hmr: {
+      protocol: 'ws',
+      host: 'localhost'
+    },
     cors: {
       origin: "*", // Allow all origins (only for development)
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -24,6 +30,9 @@ export default defineConfig({
     watch: {
       usePolling: false, // Prevent excessive reloading
     },
-    hmr: false, // Disable Hot Module Replacement
   },
+  build: {
+    watch: process.env.NODE_ENV === 'development' ? {} : undefined
+  },
+
 })
